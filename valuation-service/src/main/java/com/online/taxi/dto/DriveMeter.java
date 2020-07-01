@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.Optional;
 
 /**
- * 行驶计价相关的请求参数
+ * 行驶计价相关的请求参数：距离时间
  *
  * @date 2018/8/14
  */
@@ -39,14 +39,14 @@ public class DriveMeter {
     private Rule rule;
 
     /**
-     * 预估时距离测量结果
+     * 预估时距离测量结果：没行驶之前
      *
      * @see ChargingCategoryEnum
      */
     private Route route;
 
     /**
-     * 实际轨迹里程
+     * 实际轨迹里程：实际路程
      *
      * @see ChargingCategoryEnum
      */

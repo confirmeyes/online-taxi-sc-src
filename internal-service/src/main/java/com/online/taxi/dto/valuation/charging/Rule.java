@@ -43,7 +43,7 @@ public class Rule {
     private NightRule nightRule;
 
     /**
-     * 标签费用
+     * 标签费用：1201版本
      */
     private List<TagPrice> tagPrices;
 

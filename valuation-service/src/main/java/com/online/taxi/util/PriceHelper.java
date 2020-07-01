@@ -20,8 +20,11 @@ public class PriceHelper {
      */
     public static BigDecimal add(BigDecimal a, BigDecimal... value) {
         BigDecimal result = null;
+
         try {
             result = resetScale(Arrays.stream(value).reduce(a, BigDecimal::add));
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -98,5 +101,17 @@ public class PriceHelper {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+//        BigDecimal a = resetScale(new BigDecimal(0.365412));
+//        System.out.println(a);
+
+//        BigDecimal result = resetScale(Arrays.asList(new BigDecimal(1),new BigDecimal(2),new BigDecimal(3)).parallelStream().reduce(new BigDecimal(100), BigDecimal::add));
+//        BigDecimal result = resetScale(Arrays.asList(new BigDecimal(1),new BigDecimal(2),new BigDecimal(3)).stream().reduce(new BigDecimal(100), BigDecimal::add));
+//        System.out.println(result);
+
+        BigDecimal result = subtract(new BigDecimal(9),new BigDecimal(4));
+        System.out.println(result);
     }
 }
