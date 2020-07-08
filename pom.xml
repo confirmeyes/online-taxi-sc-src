@@ -21,6 +21,9 @@
         <module>government-service</module>
         <module>government-upload</module>
         <module>timing-service</module>
+        <module>cloud-zuul</module>
+        <module>cloud-eureka</module>
+        <module>cloud-graytest</module>
     </modules>
     <packaging>pom</packaging>
 
