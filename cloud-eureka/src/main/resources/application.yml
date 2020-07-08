@@ -8,7 +8,7 @@ eureka:
 
 
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: true
   #    service-url:
   #      # 5 24
@@ -42,7 +42,7 @@ eureka:
     fetch-registry: false
     service-url:
       # 5 24
-      defaultZone: http://euk0.com:7900/eureka/
+      defaultZone: http://euk1.com:7901/eureka/,http://euk2.com:7902/eureka/
 
 
 ---
@@ -58,7 +58,7 @@ eureka:
     fetch-registry: true
     service-url:
       # 5 24
-      defaultZone: http://euk0.com:7900/eureka/
+      defaultZone: http://euk0.com:7900/eureka/,http://euk2.com:7902/eureka/
 ---
 spring:
   profiles: 7902
@@ -72,4 +72,4 @@ eureka:
     fetch-registry: true
     service-url:
       # 5 24
-      defaultZone: http://euk0.com:7900/eureka/
+      defaultZone: http://euk0.com:7900/eureka/,http://euk1com:7901/eureka/
