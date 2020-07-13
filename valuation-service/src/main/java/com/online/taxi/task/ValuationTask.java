@@ -161,7 +161,7 @@ public class ValuationTask {
             detail.setDistancePrice(PriceHelper.resetScale(result.getDistancePrice()));
 
             return detail;
-        }).collect(Collectors.toList());
+        }) .collect(Collectors.toList());
 
         return new AsyncResult<>(details).completable();
     }
