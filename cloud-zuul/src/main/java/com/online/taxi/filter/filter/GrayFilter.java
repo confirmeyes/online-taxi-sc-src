@@ -1,4 +1,4 @@
-package filter;
+package com.online.taxi.filter.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.exception.ZuulException;
