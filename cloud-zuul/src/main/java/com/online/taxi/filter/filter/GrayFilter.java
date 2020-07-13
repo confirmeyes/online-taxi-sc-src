@@ -46,8 +46,8 @@ public class GrayFilter extends ZuulFilter {
         //获取token中用户信息
         //对用户信息和数据库或缓存中的灰度规则进行比较
         //筛选后进行分发路由
-        log.info("用户: {}", request.getHeader("user"));
-        int userId = Integer.parseInt(request.getHeader("user"));
+        log.info("用户: {}", request.getHeader("xxxx"));
+        int userId = Integer.parseInt(request.getHeader("xxxx"));
         if (userId == 1) {
             //ribbon-discovery-filter 进行分发路由
             RibbonFilterContextHolder.getCurrentContext().add("version", "v1");

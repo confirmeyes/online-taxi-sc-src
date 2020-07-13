@@ -50,11 +50,11 @@ public class GrayController {
     }
 
     @GetMapping("/test")
-    public String test(@RequestHeader("user") String userId) {
+    public String test(@RequestHeader("xxxx") String xxxx) {
 
         String url = "http://localhost:9000/graytest/test/graytest";
         log.info("请求url: " + url);
-        log.info("用户: {}", userId);
+        log.info("用户: {}", xxxx);
 
         RestTemplate restTemplate = restTemplate();
         return restTemplate.getForObject(url, String.class);
