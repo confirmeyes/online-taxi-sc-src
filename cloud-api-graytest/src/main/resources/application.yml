@@ -1,0 +1,15 @@
+spring:
+  application:
+    #应用名称
+    name: api-graytest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7900/eureka/
+    registry-fetch-interval-seconds: 30
+    enabled: true
+    #,http://localhost:7901/eureka/,http://localhost:7902/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 30
+server:
+  port: 6001

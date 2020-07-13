@@ -3,6 +3,7 @@ package com.online.taxi.controller;
 import com.online.taxi.Utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,12 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
+@RequestMapping("/test")
 public class GrayTestController {
 
     @Value("${server.port}")
     private String port;
 
-    @GetMapping()
+    @GetMapping("/graytest")
     public String grayTest() {
         return "gray-test:" + port;
     }
