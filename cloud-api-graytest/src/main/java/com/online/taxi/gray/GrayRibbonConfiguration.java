@@ -12,8 +12,9 @@ import org.springframework.context.annotation.Bean;
 
 public class GrayRibbonConfiguration {
 
+
     @Bean
-    public IRule ribbonRule() {
+    public IRule ribbonRule(){
         return new GrayRule();
     }
 

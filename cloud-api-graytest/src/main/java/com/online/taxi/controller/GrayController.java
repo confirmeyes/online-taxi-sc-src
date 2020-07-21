@@ -31,7 +31,7 @@ public class GrayController {
      */
     @Bean
     @LoadBalanced
-    RestTemplate restTemplate() {
+    RestTemplate restTemplates() {
         return new RestTemplate();
     }
 
@@ -45,7 +45,7 @@ public class GrayController {
         String url = "http://" + info.getHost() + ":" + info.getPort() + "/test/graytest";
         log.info("请求url: " + url);
 
-        RestTemplate restTemplate = restTemplate();
+        RestTemplate restTemplate = restTemplates();
         return restTemplate.getForObject(url, String.class);
     }
 
@@ -56,7 +56,7 @@ public class GrayController {
         log.info("请求url: " + url);
         log.info("用户: {}", xxxx);
 
-        RestTemplate restTemplate = restTemplate();
+        RestTemplate restTemplate = restTemplates();
         return restTemplate.getForObject(url, String.class);
     }
 }
