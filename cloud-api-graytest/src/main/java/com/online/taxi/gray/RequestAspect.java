@@ -15,14 +15,13 @@ import java.util.Map;
 /**
  * @author WIN10 .
  * @create 2020-07-17-18:05 .
- * @description .
+ * @description 使用切面编程，对到达接口请求中 header 灰度版本参数保存在 ThreadLocal.
  */
 
 @Aspect
 @Component
 public class RequestAspect {
 
-    //com.online.taxi.controller.GrayController
 
     @Pointcut("execution(* com.online.taxi.controller..*Controller*.*(..))")
     private void cutMethod() {

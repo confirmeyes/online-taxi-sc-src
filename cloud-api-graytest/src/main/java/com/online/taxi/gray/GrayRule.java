@@ -12,21 +12,14 @@ import java.util.Map;
 /**
  * @author WIN10 .
  * @create 2020-07-17-17:30 .
- * @description .
+ * @description 获取 ThreadLocal中灰度版本参数，选择相应的灰度服务.
  */
-
 
 public class GrayRule extends AbstractLoadBalancerRule {
 
-    /**
-     * 根据用户选出一个服务
-     *
-     * @param iClientConfig
-     * @return
-     */
+
     @Override
     public void initWithNiwsConfig(IClientConfig iClientConfig) {
-
     }
 
     @Override
@@ -38,17 +31,18 @@ public class GrayRule extends AbstractLoadBalancerRule {
 
         System.out.println("灰度  rule");
         Server server = null;
-        while (server == null){
+        while (server == null) {
+
             // 获取所有 可达的服务
             List<Server> reachableServers = lb.getReachableServers();
 
             // 获取 当前线程的参数 用户id verion=1
-            Map<String,String> map = RibbonParameters.get();
+            Map<String, String> map = RibbonParameters.get();
             String version = "";
-            if (map != null && map.containsKey("version")){
+            if (map != null && map.containsKey("version")) {
                 version = map.get("version");
             }
-            System.out.println("当前rule version:"+version);
+            System.out.println("当前rule version:" + version);
 
             // 根据用户选服务
             for (int i = 0; i < reachableServers.size(); i++) {
@@ -67,13 +61,11 @@ public class GrayRule extends AbstractLoadBalancerRule {
                 String version1 = metadata.get("version");
 
                 // 服务的meta也有了，用户的version也有了。
-                if (version.trim().equals(version1)){
+                if (version.trim().equals(version1)) {
                     return server;
-
                 }
 
             }
-
         }
 
         // 怎么让server 取到合适的值。
